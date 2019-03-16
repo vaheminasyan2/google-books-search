@@ -6,11 +6,16 @@ import Row from "../components/Row/row";
 import Card from "../components/Card/card";
 import API from "../utils/API";
 
+const textStyle = {
+     "margin-bottom":"60px"
+}
+
 class Search extends Component {
+
     state = {
         books: [],
         searchTerm: "",
-        message: "Start by typing in your book name.",
+        message: "Start by typing in a book name.",
     };
 
     handleInputChange = event => {
@@ -69,7 +74,7 @@ class Search extends Component {
                     </Row>
                     <Row>
                         {this.state.books.length ? (
-                            <div>
+                            <div style={textStyle}>
                                 {this.state.books.map(book => (
                                     <Card
                                         key={book.id}

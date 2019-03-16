@@ -46,7 +46,7 @@ class Saved extends Component {
                                         authors={book.authors.join(", ")}
                                         description={book.description}
                                         image={book.image}
-                                        handleBookSave={this.handleBookDelete(book._id)}
+                                        handleBookDelete={this.handleBookDelete(book._id)}
                                     />
                                 ))}
                             </div>

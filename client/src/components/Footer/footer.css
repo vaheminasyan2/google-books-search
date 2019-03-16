@@ -4,12 +4,11 @@
 }
 
 .footer {
-    min-height: 40px;
-    display: block;
-    position: absolute;
-    bottom: 0;
+    height: 40px;
+    position: fixed;
     left: 0;
-    right: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .footerContainer {
