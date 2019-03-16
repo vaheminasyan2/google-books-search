@@ -1,40 +1,32 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Search from "./pages/Search";
+import Saved from "./pages/Saved";
+import Error from "./pages/Error"
 import Navbar from "./components/Navbar/navbar";
-import Title from "./components/Title/title";
-import Search from "./components/Search/search"
 import Main from "./components/Main/main";
-import Row from "./components/Row/row";
-import Card from "./components/Card/card";
 import Footer from "./components/Footer/footer";
+
 //import books from "";
 
-class App extends Component {
-  // Setting this.state.books to the books return from Google Books API
-  // state = {
-  //   books,
-  // }
+function App() {
 
-  render() {
-    return (
-
-      <Main>
+  return (
+    <Router>
+      <div>
         <Navbar />
-        <Title />
         <Main>
-          <Row>
-            <Search />
-          </Row>
-          <Row> Results
-            <Card />
-          </Row>
+          <Switch>
+            <Route exact path="/" component={Search} />
+            <Route exact path="/search" component={Search} />
+            <Route exact path="/saved" component={Saved} />
+            <Route component={Error} />
+          </Switch>
         </Main>
         <Footer />
-      </Main>
-
-    );
-  }
+      </div>
+    </Router>
+  );
 }
 
 export default App;

@@ -1,7 +1,7 @@
 import React from "react";
-import "./card.css";
+import "./cardSaved.css";
 
-function Card(props) {
+function CardSaved(props) {
 
   return (
 
@@ -16,7 +16,7 @@ function Card(props) {
             <p className="card-text">Authors: </p>
             <p className="card-text">Description: </p>
             <a href="#" className="btn btn-sm btn-dark">View</a>
-            <a href="#" className="btn btn-sm btn-dark">Save</a>
+            <a href="#" className="btn btn-sm btn-dark">Delete</a>
           </div>
         </div>
       </div>
@@ -24,6 +24,6 @@ function Card(props) {
   );
 }
 
-export default Card;
+export default CardSaved;
 
 

@@ -1,3 +1,4 @@
+
 .title {
   width: 100%;
   text-align: center;
@@ -5,4 +6,21 @@
   text-decoration: underline;
   color: #2A77AE;
   margin-bottom: 50px;
+}
+
+.jumbotron {
+  background-image: url("../../images/books.jpg");
+}
+
+.display-4 {
+  color: white;
+}
+
+.lead {
+  color: white;
+  position: relative;
+  background: #2A77AE;
+  width: 50%;
+  left: 25%;
+  right: 25%;
 }

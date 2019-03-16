@@ -1,7 +1,7 @@
 import React from "react";
-import "./search.css";
+import "./searchBox.css";
 
-function Search(props) {
+function SearchBox(props) {
 
   return (
     < form className="searchBox border border-success">
@@ -14,4 +14,4 @@ function Search(props) {
   );
 };
 
-export default Search;
+export default SearchBox;

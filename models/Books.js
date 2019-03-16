@@ -2,13 +2,20 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Using Schema constructor create a new BookSchema
-var BookSchema = new Schema({
+const mongoose = rquire("mongoose");
+const Schema = mongoose.Schema;
+
+
+const bookSchema = new Schema({
     title: {
         type: String,
         required: true,
     },
-    authors: {
+    subtitle: {
         type: String,
+    },
+    authors: {
+        type: [String],
         required: true,
     },
     description: {
@@ -22,9 +29,14 @@ var BookSchema = new Schema({
     link: {
         type: String,
         required: true,
-    }
+    },
+    googleId: {
+        type: String,
+        required: true,
+        unique: true,
+    },
 });
 
 // Create the book model using BookSchema and export it
-var Book = mongoose.model("Book", BookSchema);
+const Book = mongoose.model("Book", bookSchema);
 module.exports = Book;
