@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import Title from "../components/Title/title";
-import SearchBox from "../components/Search/searchBox"
+import SearchBox from "../components/SearchBox/searchBox"
 import Main from "../components/Main/main";
 import Row from "../components/Row/row";
 import Card from "../components/Card/card";
 import API from "../utils/API";
-import { runInThisContext } from "vm";
 
-class Saved extends Component {
+class Search extends Component {
     state = {
         books: [],
         searchTerm: "",
-        message: "Please, search for a book"
+        message: "Please, search for a book",
     };
 
     handleInputChange = event => {
@@ -23,7 +22,7 @@ class Saved extends Component {
 
     getBooks = () => {
         API.getBooks(this.state.searchTerm)
-            .then(res =>
+            .then(res => 
                 this.setState({
                     books: res.data
                 })
@@ -55,43 +54,43 @@ class Saved extends Component {
         })
             .then(() => this.getBooks());
     }
-}
 
-function Search() {
-    return (
-        <div>
-            <Title />
-            <Main>
-                <Row>
-                    <SearchBox
-                        handleInputChange={this.handleInputChange}
-                        handleFormSubmit={this.handleFormSubmit}
-                        searchTerm={this.state.searchTerm}
-                    />
-                </Row>
-                <Row> Results
-                {this.state.books.length ? (
-                    <div>
-                        {this.state.books.map(book =>(
-                            <Card 
-                                key={book.id}
-                                title={book.volumeInfo.title}
-                                subtitle={book.volumeInfo.subtitle}
-                                link={book.volumeInfo.infoLink}
-                                authors={book.volumeInfo.authors.join(", ")}
-                                description={book.volumeInfo.description}
-                                image={book.volumeInfo.imageLinks.thumbnail}
-                                handleBookSave= {this.handleBookSave(book.id)}
-                            />
-                        ))}
-                        </div>
+    render() {
+        return (
+            <div>
+                <Title />
+                <Main>
+                    <Row>
+                        <SearchBox
+                            handleInputChange={this.handleInputChange}
+                            handleFormSubmit={this.handleFormSubmit}
+                            searchTerm={this.state.searchTerm}
+                        />
+                    </Row>
+                    <Row>
+                        {this.state.books.length ? (
+                            <div>
+                                {this.state.books.map(book => (
+                                    <Card
+                                        key={book.id}
+                                        title={book.volumeInfo.title}
+                                        subtitle={book.volumeInfo.subtitle}
+                                        link={book.volumeInfo.infoLink}
+                                        authors={book.volumeInfo.authors.join(", ")}
+                                        description={book.volumeInfo.description}
+                                        image={book.volumeInfo.imageLinks.thumbnail}
+                                        handleBookSave={this.handleBookSave(book.id)}
+                                    />
+                                ))}
+                            </div>
                         ) : (
-                            <h2 className="text-center">{this.state.message}</h2>
-                )}
-                </Row>
-            </Main>
-        </div>
-    );
-};
+                                <h2 className="text-center">{this.state.message}</h2>
+                            )}
+                    </Row>
+                </Main>
+            </div>
+        );
+    };
+}
 
 export default Search;
