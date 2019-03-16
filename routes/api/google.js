@@ -5,6 +5,5 @@ const googleController = require("../../controllers/googleController");
 router
   .route("/")
   .get(googleController.findAll)
-  console.log("vahe");
 
 module.exports = router;

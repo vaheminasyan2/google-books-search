@@ -11,11 +11,8 @@ module.exports = {
         params
       })
       .then(results =>
-  
         results.data.items.filter(
-          
           result =>
-          
             result.volumeInfo.title &&
             result.volumeInfo.infoLink &&
             result.volumeInfo.authors &&

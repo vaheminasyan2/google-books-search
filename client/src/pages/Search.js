@@ -10,7 +10,7 @@ class Search extends Component {
     state = {
         books: [],
         searchTerm: "",
-        message: "Please, search for a book",
+        message: "Start by typing in your book name.",
     };
 
     handleInputChange = event => {
@@ -30,7 +30,7 @@ class Search extends Component {
             .catch(() =>
                 this.setState({
                     books: [],
-                    message: "We couldn't find book that matched search criteria. Please, try again with differnt search term."
+                    message: "We couldn't find book that matched search criteria. Please, try again with different search term."
                 })
             );
     };
