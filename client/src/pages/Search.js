@@ -6,9 +6,6 @@ import Row from "../components/Row/row";
 import Card from "../components/Card/card";
 import API from "../utils/API";
 
-const textStyle = {
-     "margin-bottom":"60px"
-}
 
 class Search extends Component {
 
@@ -50,7 +47,7 @@ class Search extends Component {
 
         API.saveBook({
             googleId: book.id,
-            tite: book.volumeInfo.title,
+            title: book.volumeInfo.title,
             subtitle: book.volumeInfo.subtitle,
             link: book.volumeInfo.infoLink,
             authors: book.volumeInfo.authors,
@@ -74,7 +71,7 @@ class Search extends Component {
                     </Row>
                     <Row>
                         {this.state.books.length ? (
-                            <div style={textStyle}>
+                            <div className="cardBox">
                                 {this.state.books.map(book => (
                                     <Card
                                         key={book.id}
@@ -84,7 +81,14 @@ class Search extends Component {
                                         authors={book.volumeInfo.authors.join(", ")}
                                         description={book.volumeInfo.description}
                                         image={book.volumeInfo.imageLinks.thumbnail}
-                                        handleBookSave={this.handleBookSave(book.id)}
+                                        Button={() => (
+                                            <button
+                                              onClick={() => this.handleBookSave(book.id)}
+                                              className="btn btn-sm btn-dark"
+                                            >
+                                              Save
+                                            </button>
+                                          )}
                                     />
                                 ))}
                             </div>

@@ -4,7 +4,7 @@ import "./searchBox.css";
 function SearchBox({searchTerm, handleInputChange, handleFormSubmit}) {
 
   return (
-    < form className="searchBox border border-success">
+    < form className="searchBox shadow-sm border border-success rounded">
       <div className="form-group" >
         <label htmlFor="bookTitle">Book Search</label>
         <input 

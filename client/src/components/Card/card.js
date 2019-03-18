@@ -1,11 +1,11 @@
 import React from "react";
 import "./card.css";
 
-function Card ({title, subtitle, authors, link, description, image, handleBookSave}) {
+function Card ({title, subtitle, authors, link, description, image, Button}) {
 
   return (
 
-    <div className="card border border-success mb-3">
+    <div className="card shadow-sm mb-3">
       <div className="row no-gutters">
         <div className="col-md-2 text-center">
           <img alt={title} src={image} />
@@ -17,7 +17,7 @@ function Card ({title, subtitle, authors, link, description, image, handleBookSa
             <p className="card-text"><strong>Authors: </strong>{authors}</p>
             <p className="card-text"><strong>Description: </strong>{description}</p>
             <a href={link} target="_blank" className="btn btn-sm btn-dark">View</a>
-            <a href="#" onClick={handleBookSave} className="btn btn-sm btn-dark">Save</a>
+            <Button />
           </div>
         </div>
       </div>

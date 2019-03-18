@@ -36,17 +36,24 @@ class Saved extends Component {
                 <Main>
                     <Row>
                         {this.state.books.length ? (
-                            <div>
+                            <div className="cardBox">
                                 {this.state.books.map(book => (
                                     <CardSaved
-                                        key={book.id}
+                                        key={book._id}
                                         title={book.title}
                                         subtitle={book.subtitle}
                                         link={book.link}
                                         authors={book.authors.join(", ")}
                                         description={book.description}
                                         image={book.image}
-                                        handleBookDelete={this.handleBookDelete(book._id)}
+                                        Button={() => (
+                                            <button
+                                              onClick={() => this.handleBookDelete(book._id)}
+                                              className="btn btn-sm btn-dark"
+                                            >
+                                              Delete
+                                            </button>
+                                          )}
                                     />
                                 ))}
                             </div>
