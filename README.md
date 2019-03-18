@@ -5,7 +5,7 @@ Google Books Search is full stack MERN application. User can search for books vi
 
 Try it out [here](https://google-books-search-0317.herokuapp.com/).
 
-<kbd><img src="public/images/homepage.PNG"/></kbd>
+<kbd><img src="client/public/images/homepage.JPG"/></kbd>
 
 ### Technology used:
 - Node.js
